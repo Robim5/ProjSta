@@ -1,0 +1,14 @@
+dark
+142C14
+
+poly green 
+2D5128
+
+midgreen
+537B2F
+
+green 
+8DA750
+
+weak green 
+E4EB9C

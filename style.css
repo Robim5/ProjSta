@@ -1,0 +1,18 @@
+/*palete*/
+:root {
+  --dark: #142C14;
+  --polygreen: #2D5128;
+  --midgreen: #537B2F;
+  --green: #8DA750;
+  --weakgreen: #E4EB9C;
+}
+
+/* Example usage:
+body {
+  background-color: var(--dark);
+}
+
+.some-element {
+  color: var(--green);
+}
+*/
