@@ -15,10 +15,10 @@
             <div class="nav-container">
                 <img id="logoImg" src="assets/logo/logolight.png" alt="Logo">
                 <ul>
-                    <li><a href="#">Javascript</a></li>
-                    <li><a href="#">React & JS</a></li>
-                    <li><a href="#">Python</a></li>
-                    <li><a href="#">CSharp</a></li>
+                    <li><a href="#javascript">Javascript</a></li>
+                    <li><a href="#react">React & JS</a></li>
+                    <li><a href="#python">Python</a></li>
+                    <li><a href="#csharp">CSharp</a></li>
                 </ul>
                 <i id="themeToggle" class="ri-moon-clear-fill"></i>
             </div>
@@ -34,13 +34,13 @@
 
     <div class="separateBar"></div>
 
-    <div class="javascript">
+    <div id="javascript" class="javascript">
         <h2>Pure Javascript</h2>
         <div class="cards"> <!-- One container for all cards -->
             <div class="card"> <!-- Each project in its own card -->
                 <img src="assets/javascript/calculatorjs.png" alt="Calculator App">
                 <h3>Calculator</h3>
-                <button>How do I do this?</button>
+                <button data-link="projects/SimpleJs/Calculator/Calculator.html">How do I do this?</button>
             </div>
             <div class="card">
                 <img src="assets/javascript/password.png" alt="Password Generator">
@@ -80,7 +80,7 @@
         </div> <!-- Close cards once -->
     </div>
 
-    <div class="react">
+    <div id="react" class="react">
         <h2>React & JavaScript</h2>
         <div class="cards">
             <img src="assets/lock.jpg" alt="lock">
@@ -88,7 +88,7 @@
         </div>
     </div>
 
-    <div class="python">
+    <div id="python" class="python">
         <h2>Python</h2>
         <div class="cards">
             <img src="assets/lock.jpg" alt="lock">
@@ -96,7 +96,7 @@
         </div>
     </div>
 
-    <div class="csharp">
+    <div id="csharp" class="csharp">
         <h2>CSharp</h2>
         <div class="cards">
             <img src="assets/lock.jpg" alt="lock">
@@ -108,7 +108,7 @@
 
     <div class="endpage">
         <h3>More languages in the future</h3>
-        <button>Back to Top</button>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth' })">Back to Top</button>
     </div>
 
     <footer>
