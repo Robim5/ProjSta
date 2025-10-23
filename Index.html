@@ -10,74 +10,369 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="nav-container">
+    <header id="header">
+        <div class="nav-container">
+            <div class="logo-section">
                 <img id="logoImg" src="assets/logo/logolight.png" alt="Logo">
-                <ul>
-                    <li><a href="#javascript">Javascript</a></li>
-                    <li><a href="#react">React & JS</a></li>
-                    <li><a href="#python">Python</a></li>
-                    <li><a href="#csharp">CSharp</a></li>
-                </ul>
-                <i id="themeToggle" class="ri-moon-clear-fill"></i>
             </div>
-        </nav>
+            <nav>
+                <ul>
+                    <li><a href="#javascript">JavaScript</a></li>
+                    <li><a href="#react">React</a></li>
+                    <li><a href="#python">Python</a></li>
+                    <li><a href="#csharp">C#</a></li>
+                </ul>
+            </nav>
+            <i id="themeToggle" class="ri-moon-clear-fill"></i>
+        </div>
     </header>
 
-    <div class="separateBar"></div>
-
-    <section class="startpage">
-        <h1>Let’s Learn Together</h1>
-        <p>Always With You</p>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Let's Learn Together!</h1>
+            <p>Build Amazing Projects and Master Coding Through Hands-On Experience</p>
+            <div class="hero-buttons">
+                <a href="#javascript" class="btn btn-primary">
+                    Start Learning <i class="ri-arrow-right-line"></i>
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="ri-github-fill"></i> View GitHub
+                </a>
+            </div>
+        </div>
     </section>
 
-    <div class="separateBar"></div>
 
-    <div id="javascript" class="javascript">
-        <h2>Pure Javascript</h2>
-        <div class="cards"> <!-- One container for all cards -->
-            <div class="card"> <!-- Each project in its own card -->
-                <img src="assets/javascript/calculatorjs.png" alt="Calculator App">
-                <h3>Calculator</h3>
-                <button data-link="projects/SimpleJs/Calculator/Calculator.html">How do I do this?</button>
+    <div class="stats">
+        <div class="stat-card fade-in">
+            <div class="stat-icon"><i class="ri-code-box-line"></i></div>
+            <div class="stat-number">30+</div>
+            <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-card fade-in">
+            <div class="stat-icon"><i class="ri-lightbulb-flash-line"></i></div>
+            <div class="stat-number">4</div>
+            <div class="stat-label">Technologies</div>
+        </div>
+        <div class="stat-card fade-in">
+            <div class="stat-icon"><i class="ri-rocket-line"></i></div>
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Free</div>
+        </div>
+        <div class="stat-card fade-in">
+            <div class="stat-icon"><i class="ri-heart-fill"></i></div>
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Passion</div>
+        </div>
+    </div>
+
+
+    <!-- ============== JAVASCRIPT ====================================================== -->
+
+    <section id="javascript">
+        <div class="section-header fade-in">
+            <span class="section-tag">Pure JavaScript</span>
+            <h2>Master the Fundamentals</h2>
+            <p class="section-description">Start your coding journey with pure JavaScript projects. From basics to advanced concepts.</p>
+        </div>
+
+        <h3 style="color: var(--midgreen); font-size: 28px; margin: 40px 0 20px;">Easy Projects</h3>
+
+        <div class="cards fade-in">
+            <!--=== Calculator === -->
+            <div class="card fade-in" data-link="---">
+                <div class="card-image">
+                    <img src="assets/javascript/easy/calculator.png" alt="Calculator">
+                    <span class="card-badge">Easy</span>
+                </div>
+                <div class="card-content">
+                    <h3>Basic Calculator</h3>
+                    <p>Build a functional calculator with basic operations -> +-*/</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-tags">
+                        <span class="tag">Learn Basic</span>
+                        <span class="tag">Math</span>
+                        <span class="tag">Easy</span>
+                    </div>
+                    <button>
+                        How do i do this? <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
             </div>
+            <!--=== Password Generator === -->
+            <div class="card fade-in" data-link="---">
+                <div class="card-image">
+                    <img src="assets/javascript/easy/password.png" alt="password">
+                    <span class="card-badge">Easy</span>
+                </div>
+                <div class="card-content">
+                    <h3>Password Generator</h3>
+                    <p>Create secure random passwords with custom options</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-tags">
+                        <span class="tag">Learn Basic</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Easy</span>
+                    </div>
+                    <button>
+                        How do i do this? <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+            </div>
+            <!--=== To Do List === -->
+            <div class="card fade-in" data-link="---">
+                <div class="card-image">
+                    <img src="assets/javascript/easy/todo.png" alt="todo">
+                    <span class="card-badge">Easy</span>
+                </div>
+                <div class="card-content">
+                    <h3>To Do List</h3>
+                    <p>Organize tasks with add, edit, and delete features</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-tags">
+                        <span class="tag">CRUD</span>
+                        <span class="tag">Local Storage</span>
+                        <span class="tag">Easy</span>
+                    </div>
+                    <button>
+                        How do i do this? <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+            </div>
+            <!--=== CountDown === -->
+            <div class="card fade-in" data-link="---">
+                <div class="card-image">
+                    <img src="assets/javascript/easy/countdown.png" alt="todo">
+                    <span class="card-badge">Easy</span>
+                </div>
+                <div class="card-content">
+                    <h3>Countdown Timer</h3>
+                    <p>Track time with a customizable countdown and alert when it reaches zero</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-tags">
+                        <span class="tag">Sound</span>
+                        <span class="tag">Time</span>
+                        <span class="tag">Easy</span>
+                    </div>
+                    <button>
+                        How do i do this? <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+            </div>
+            <!--=== Rock Paper Scissor === -->
+            <div class="card fade-in" data-link="---">
+                <div class="card-image">
+                    <img src="assets/javascript/easy/todo.png" alt="todo">
+                    <span class="card-badge">Easy</span>
+                </div>
+                <div class="card-content">
+                    <h3>Rock Paper Scissor</h3>
+                    <p>Play the classic game against the computer with instant win or lose results</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-tags">
+                        <span class="tag">Bot</span>
+                        <span class="tag">Random</span>
+                        <span class="tag">Game</span>
+                        <span class="tag">Fun</span>
+                        <span class="tag">Easy</span>
+                    </div>
+                    <button>
+                        How do i do this? <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- --------------------------------------------------------------------------------------------------- -->
+             <!-- --------------------------------------------------------------------------------------------------- -->
+              <!-- --------------------------------------------------------------------------------------------------- -->
+               <!-- --------------------------------------------------------------------------------------------------- -->
+                <!-- --------------------------------------------------------------------------------------------------- -->
+                 <!-- --------------------------------------------------------------------------------------------------- -->
+                  <!-- --------------------------------------------------------------------------------------------------- -->
+                   <!-- --------------------------------------------------------------------------------------------------- -->
+            <!--=== To Do List === -->
+            <div class="card fade-in" data-link="---">
+                <div class="card-image">
+                    <img src="assets/javascript/easy/todo.png" alt="todo">
+                    <span class="card-badge">Easy</span>
+                </div>
+                <div class="card-content">
+                    <h3>To Do List</h3>
+                    <p>Organize tasks with add, edit, and delete features</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JS</span>
+                        <span class="tag">CRUD</span>
+                        <span class="tag">Local Storage</span>
+                        <span class="tag">Easy</span>
+                    </div>
+                    <button>
+                        How do i do this? <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+            </div>
+            <!--=== To Do List === -->
+            <div class="card fade-in" data-link="---">
+                <div class="card-image">
+                    <img src="assets/javascript/easy/todo.png" alt="todo">
+                    <span class="card-badge">Easy</span>
+                </div>
+                <div class="card-content">
+                    <h3>To Do List</h3>
+                    <p>Organize tasks with add, edit, and delete features</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JS</span>
+                        <span class="tag">CRUD</span>
+                        <span class="tag">Local Storage</span>
+                        <span class="tag">Easy</span>
+                    </div>
+                    <button>
+                        How do i do this? <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+            </div>
+            <!--=== To Do List === -->
+            <div class="card fade-in" data-link="---">
+                <div class="card-image">
+                    <img src="assets/javascript/easy/todo.png" alt="todo">
+                    <span class="card-badge">Easy</span>
+                </div>
+                <div class="card-content">
+                    <h3>To Do List</h3>
+                    <p>Organize tasks with add, edit, and delete features</p>
+                </div>
+                <div class="card-footer">
+                    <div class="card-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JS</span>
+                        <span class="tag">CRUD</span>
+                        <span class="tag">Local Storage</span>
+                        <span class="tag">Easy</span>
+                    </div>
+                    <button>
+                        How do i do this? <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </section>
+
+    
+    
+
             <div class="card">
-                <img src="assets/javascript/password.png" alt="Password Generator">
-                <h3>Password Generator</h3>
+                <img src="assets/javascript/easy/rockpaperscissor.png" alt="rockpaperscissor">
+                <h3>Rock Paper Scissor</h3>
                 <button>How do I do this?</button>
             </div>
             <div class="card">
-                <img src="assets/javascript/quizz.jpg" alt="Quiz App">
+                <img src="assets/javascript/easy/bmi.png" alt="bni">
+                <h3>BMI Calculator</h3>
+                <button>How do I do this?</button>
+            </div>
+            <div class="card">
+                <img src="assets/javascript/easy/slider.png" alt="slider">
+                <h3>Image Slider</h3>
+                <button>How do I do this?</button>
+            </div>
+            <div class="card">
+                <img src="assets/javascript/easy/unit.png" alt="unit">
+                <h3>Geral Converter</h3>
+                <button>How do I do this?</button>
+            </div>
+        </div>
+        <!-- ============== INTERMEDIATE ====================================================== -->
+        <h3>Intermediate</h3>
+        <div class="cards">
+            <div class="card">
+                <img src="assets/javascript/mid/calculator.png" alt="calculator">
+                <h3>Scientific Calculator</h3>
+                <button data-link="projects/SimpleJs/Calculator/Calculator.html">How do I do this?</button>
+            </div>
+            <div class="card">
+                <img src="assets/javascript/mid/weather.png" alt="weather">
+                <h3>Weather App</h3>
+                <button>How do I do this?</button>
+            </div>
+            <div class="card">
+                <img src="assets/javascript/mid/kanban.png" alt="kanban">
+                <h3>Kanban Board</h3>
+                <button>How do I do this?</button>
+            </div>
+            <div class="card">
+                <img src="assets/javascript/mid/episode.png" alt="episode">
+                <h3>Episode Tracker</h3>
+                <button>How do I do this?</button>
+            </div>
+            <div class="card">
+                <img src="assets/javascript/mid/quizz.png" alt="quizz">
                 <h3>Quiz App</h3>
                 <button>How do I do this?</button>
             </div>
             <div class="card">
-                <img src="assets/javascript/snake.png" alt="Snake Game">
+                <img src="assets/javascript/mid/drawing.png" alt="drawing">
+                <h3>Drawing App</h3>
+                <button>How do I do this?</button>
+            </div>
+        </div>
+        <!-- ============== GAMES ====================================================== -->
+        <h3>Games</h3>
+        <div class="cards">
+            <div class="card">
+                <img src="assets/javascript/games/space.png" alt="space">
+                <h3>Space Inviders</h3>
+                <button data-link="projects/SimpleJs/Calculator/Calculator.html">How do I do this?</button>
+            </div>
+            <div class="card">
+                <img src="assets/javascript/games/tictactoe.png" alt="tictactoe">
+                <h3>Tic-Tac-Toe</h3>
+                <button>How do I do this?</button>
+            </div>
+            <div class="card">
+                <img src="assets/javascript/games/snake.png" alt="snake">
                 <h3>Snake Game</h3>
                 <button>How do I do this?</button>
             </div>
             <div class="card">
-                <img src="assets/javascript/tictactoe.jpg" alt="Tic Tac Toe Game">
-                <h3>Tic Tac Toe</h3>
+                <img src="assets/javascript/games/memory.png" alt="memory">
+                <h3>Memory Game</h3>
                 <button>How do I do this?</button>
             </div>
             <div class="card">
-                <img src="assets/javascript/timer.jpg" alt="Timer App">
-                <h3>Timer</h3>
+                <img src="assets/javascript/games/platform.png" alt="platform">
+                <h3>2D Platform</h3>
                 <button>How do I do this?</button>
             </div>
             <div class="card">
-                <img src="assets/javascript/todo.png" alt="To Do List App">
-                <h3>To Do List</h3>
+                <img src="assets/javascript/games/pong.png" alt="pong">
+                <h3>Ping Pong</h3>
                 <button>How do I do this?</button>
             </div>
             <div class="card">
-                <img src="assets/javascript/weather.jpg" alt="Weather App">
-                <h3>Weather App</h3>
+                <img src="assets/javascript/games/hangman.png" alt="hangman">
+                <h3>HangMan</h3>
                 <button>How do I do this?</button>
             </div>
-        </div> <!-- Close cards once -->
+            <div class="card">
+                <img src="assets/javascript/games/bird.png" alt="bird">
+                <h3>Flappy Bird</h3>
+                <button>How do I do this?</button>
+            </div>
+        </div>
     </div>
 
     <div id="react" class="react">

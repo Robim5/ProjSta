@@ -12,69 +12,67 @@
 <body>
     <header>
         <div class="nav-container">
-            <img id="logoImg" src="assets/logo/logolight.png" alt="Logo">
-            <h1>Calculator</h1>
+            <div class="logo-title">
+                <img id="logoImg" src="../../../assets/logo/logolight.png" alt="Logo">
+                <h1>Calculator</h1>
+            </div>
             <i id="themeToggle" class="ri-moon-clear-fill"></i>
         </div>
     </header>
 
-    <div class="separateBar"></div>
+    <div class="calculator-container">
+        <div class="display" id="display">0</div>
 
-    <!--calculator form (base) -->
-    <div class="calculator-grid">
-        <input type="text" class="display" id="display" value="0" readonly aria-label="Calculator display">
+        <div class="calculator-grid" id="calculatorGrid">
+            <!-- scientific mode r1 --> 
+            <button class="scientific-btn" id="secondBtn" onclick="toggleSecondary()">2nd</button>
+            <button class="scientific-btn deg-mode" id="degBtn" onclick="toggleDegRad()">deg</button>
+            <button class="scientific-btn" id="sinBtn" onclick="addTrigFunction('sin')">sin</button>
+            <button class="scientific-btn" id="cosBtn" onclick="addTrigFunction('cos')">cos</button>
+            <button class="scientific-btn" id="tanBtn" onclick="addTrigFunction('tan')">tan</button>
 
-        <!--hidden parts -->
+            <!-- scientific mode r2 -->
+            <button class="scientific-btn" onclick="appendToDisplay('^')">x<sup>y</sup></button>
+            <button class="scientific-btn" onclick="appendToDisplay('log(')">log</button>
+            <button class="scientific-btn" onclick="appendToDisplay('ln(')">ln</button>
+            <button class="scientific-btn" onclick="appendToDisplay('(')">(</button>
+            <button class="scientific-btn" onclick="appendToDisplay(')')">)</button>
 
-        <button class="scientific hidden" onclick="transformSinCosTan()" aria-label="Switch secondary functions">2nd</button>
-        <!--add to sin, cos, tan ^-1, desactive deg when 2nd is activated-->
-        <button class="scientific hidden deg-btn" onclick="turn()" aria-label="Swirch between degrees and rad">deg</button>
-        <!--turn into rad and desactivate 2nd while in deg-->
-        <button class="scientific hidden sin-btn" onclick="appendToDisplay(isSecondActive ? 'arcsin(' : 'sin('" aria-label="Sino">sin</button>
-        <!--if 2nd active the text o the button is sin^-1 and add in display "arcsin()"-->
-        <button class="scientific hidden cos-btn" onclick="appendToDisplay(isSecondActive ? 'arccos(' : 'cos('" aria-label="Cosine">cos</button>
-        <!--if 2nd active the text o the button is cos^-1 and add in display "arccos()"-->
-        <button class="scientific hidden tan-btn" onclick="appendToDisplay(isSecondActive ? 'arctan(' : 'tan('" aria-label="Tangent">tan</button>
-        <!--if 2nd active the text o the button is tan^-1 and add in display "arctan()"-->
+            <!-- r3 -->
+            <button class="scientific-btn" onclick="appendToDisplay('√(')">√x</button>
+            <button onclick="clearDisplay()">AC</button>
+            <button onclick="deleteLast()" aria-label="Delete last character" title="Delete last character"><i class="ri-delete-back-2-line"></i></button>
+            <button class="operator" onclick="appendToDisplay('%')">%</button>
+            <button class="operator" onclick="appendToDisplay('/')">÷</button>
 
-        <button class="scientific hidden" onclick="appendToDisplay('^')" aria-label="Power">x^y</button>
-        <button class="scientific hidden" onclick="appendToDisplay('log(')" aria-label="Base 10 logarithm">log</button>
-        <button class="scientific hidden" onclick="appendToDisplay('ln(')" aria-label="Natural logarithm">ln</button>
-        <button class="scientific hidden" onclick="appendToDisplay('(')" aria-label="Left parenthesis">(</button>
-        <button class="scientific hidden" onclick="appendToDisplay(')')" aria-label="Right parenthesis">)</button>
+            <!-- r4 -->
+            <button class="scientific-btn" onclick="appendToDisplay('!')">x!</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('*')">×</button>
 
-        <!--not all hidden -->
+            <!-- r5 -->
+            <button class="scientific-btn" onclick="appendToDisplay('^(-1)')">1/x</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('-')">−</button>
 
-        <button class="scientific hidden" onclick="appendToDisplay('√(')" aria-label="Square root">√x</button>
-        <button onclick="clearDisplay()" aria-label="Clean display">AC</button>
-        <button onclick="deleteLast()" aria-label="Delete last digit"><i class="ri-delete-back-2-line"></i></button>
-        <button onclick="appendToDisplay('%')" aria-label="Percent">%</button>
-        <button onclick="appendToDisplay('/')" aria-label="Division">/</button>
+            <!-- r6 -->
+            <button class="scientific-btn" onclick="appendToDisplay('π')">π</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
 
-        <button class="scientific hidden" onclick="appendToDisplay('!')" aria-label="Factorial">x!</button>
-        <button onclick="appendToDisplay('7')" aria-label="Number 7">7</button>
-        <button onclick="appendToDisplay('8')" aria-label="Number 8">8</button>
-        <button onclick="appendToDisplay('9')" aria-label="Number 9">9</button>
-        <button onclick="appendToDisplay('*')" aria-label="Multiplication">*</button>
-        
-        <button class="scientific hidden" onclick="appendToDisplay('^(-1)')" aria-label="reverse">1/x</button>
-        <button onclick="appendToDisplay('4')" aria-label="Number 4">4</button>
-        <button onclick="appendToDisplay('5')" aria-label="Number 5">5</button>
-        <button onclick="appendToDisplay('6')" aria-label="Number 6">6</button>
-        <button onclick="appendToDisplay('-')" aria-label="Subtraction">-</button>
-        
-        <button class="scientific hidden" onclick="appendToDisplay('π')" aria-label="Pi">π</button>
-        <button onclick="appendToDisplay('1')" aria-label="Number 1">1</button>
-        <button onclick="appendToDisplay('2')" aria-label="Number 2">2</button>
-        <button onclick="appendToDisplay('3')" aria-label="Number 3">3</button>
-        <button onclick="appendToDisplay('+')" aria-label="Plus">+</button>
-        
-        <button onclick="changeCalculator()" aria-label="Switch to scientific mode "><i class="ri-swap-2-line"></i></button>
-        <button class="scientific hidden" onclick="appendToDisplay('e')" aria-label="Constant e">e</button>
-        <button onclick="appendToDisplay('0')" aria-label="Number 0">0</button>
-        <button onclick="appendToDisplay('.')" aria-label="Decimal point">.</button>
-        <button class="equals" onclick="calculateResult()" aria-label="Show result">=</button>
-
+            <!-- r8 -->
+            <button class="mode-toggle" onclick="toggleScientific()" title="Toggle scientific mode" aria-label="Toggle scientific mode"><i class="ri-swap-2-line"></i></button>
+            <button class="scientific-btn" onclick="appendToDisplay('e')">e</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button class="equals" onclick="calculateResult()">=</button>
+        </div>
     </div>
 
     <script src="script.js"></script>

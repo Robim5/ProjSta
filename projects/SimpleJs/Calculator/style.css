@@ -1,0 +1,326 @@
+/* ======= Palet ======= */
+
+:root {
+  /* green */
+  --dark: #142c14;
+  --polygreen: #2d5128;
+  --midgreen: #537b2f;
+  --green: #8da750;
+  --weakgreen: #e4eb9c;
+
+  /* neutral */
+  --white: #ffffff;
+  --black: #000000;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* light theme */
+  --bg-primary: var(--white);
+  --bg-secondary: var(--gray-50);
+  --bg-accent: var(--weakgreen);
+
+  --text-primary: var(--dark);
+  --text-secondary: var(--polygreen);
+  --text-muted: var(--gray-600);
+
+  --button-bg: var(--gray-100);
+  --button-hover: var(--gray-200);
+  --button-text: var(--dark);
+
+  --accent: var(--green);
+  --accent-hover: var(--midgreen);
+  --accent-text: var(--white);
+
+  --operator: var(--midgreen);
+  --operator-hover: var(--polygreen);
+
+  --border: var(--gray-200);
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-lg: rgba(0, 0, 0, 0.15);
+}
+
+/* ======= Base ======= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.dark-mode {
+  --bg-primary: var(--dark);
+  --bg-secondary: var(--polygreen);
+  --bg-accent: var(--midgreen);
+
+  --text-primary: var(--white);
+  --text-secondary: var(--weakgreen);
+  --text-muted: var(--gray-400);
+
+  --button-bg: #1e3a1e;
+  --button-hover: var(--polygreen);
+  --button-text: var(--white);
+
+  --accent: var(--green);
+  --accent-hover: var(--weakgreen);
+  --accent-text: var(--dark);
+
+  --operator: var(--green);
+  --operator-hover: var(--weakgreen);
+
+  --border: var(--polygreen);
+  --shadow: rgba(0, 0, 0, 0.4);
+  --shadow-lg: rgba(0, 0, 0, 0.6);
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ======= Header ======= */
+
+header {
+  padding: 10px 0;
+  background: var(--bg-secondary);
+  box-shadow: 0 2px 8px var(--shadow);
+  position: relative;
+  overflow: visible;
+}
+
+.nav-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#logoImg {
+  height: 165px;
+  width: auto;
+  margin-top: -60px;
+  margin-bottom: -60px;
+}
+
+h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+#themeToggle {
+  font-size: 24px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-right: 10px;
+}
+
+#themeToggle:hover {
+  transform: scale(1.15) rotate(15deg);
+}
+
+/* ======= Layout ======= */
+
+.calculator-grid {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.display,
+#display {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: right;
+  font-size: 48px;
+  font-weight: 300;
+  overflow-x: auto;
+  word-break: break-all;
+  min-height: 100px;
+  border: 2px solid var(--border);
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: all 0.3s ease;
+  margin: 20px 100px;
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.calculator-grid.scientific {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* ======= Buttons ======= */
+
+button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  padding: 25px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+button:hover {
+  background: var(--button-hover);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px var(--shadow-lg);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 2px var(--shadow);
+}
+
+.operator {
+  color: var(--operator);
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.operator:hover {
+  color: var(--operator-hover);
+}
+
+.equals {
+  background: var(--accent);
+  color: var(--accent-text);
+  font-weight: 700;
+  font-size: 24px;
+  border-color: var(--accent);
+}
+
+.equals:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.mode-toggle {
+  background: var(--operator);
+  color: var(--white);
+  border-color: var(--operator);
+}
+
+.mode-toggle:hover {
+  background: var(--operator-hover);
+  border-color: var(--operator-hover);
+}
+
+.scientific-btn {
+  display: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.calculator-grid.scientific .scientific-btn {
+  display: flex;
+}
+
+.secondary-active {
+  background: var(--accent) !important;
+  color: var(--accent-text) !important;
+  border-color: var(--accent) !important;
+}
+
+.deg-mode {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ======= Responsive ======= */
+
+@media (max-width: 600px) {
+  .calculator-grid {
+    padding: 15px;
+    gap: 8px;
+  }
+
+  .display,
+  #display {
+    font-size: 36px;
+    padding: 25px 15px;
+    min-height: 80px;
+    margin: 20px 15px;
+  }
+
+  button {
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  .scientific-btn {
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .operator,
+  .equals {
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  #logoImg {
+    height: 135px;
+    width: auto;
+    margin-top: -50px;
+    margin-bottom: -50px;
+  }
+}
+
+@media (max-width: 400px) {
+  button {
+    padding: 18px;
+    font-size: 16px;
+  }
+
+  .scientific-btn {
+    font-size: 12px;
+    padding: 12px;
+  }
+
+  .display,
+  #display {
+    font-size: 28px;
+  }
+}
