@@ -1,9 +1,14 @@
 //variables
 const themeToggle = document.getElementById('themeToggle');
-const logoImg = document.getElementById('logoImg');
 const body = document.body;
 const header = document.getElementById('header');
 const backToTop = document.getElementById('backToTop');
+const filterTagsContainer = document.getElementById('filterTags');
+const clearFiltersBtn = document.getElementById('clearFilters');
+
+
+//project completion (when is not connected with an account)
+const completedProjects = JSON.parse(localStorage.getItem('completedProjects') || '[]');
 
 //load saved theme
 if (localStorage.getItem('theme') === 'dark') {
@@ -14,7 +19,7 @@ if (localStorage.getItem('theme') === 'dark') {
     }
 }
 
-//open projects in new tab
+/*open projects in new tab
 document.querySelectorAll('.card button').forEach(button => {
     button.addEventListener('click', () => {
         const link = button.getAttribute('data-link');
@@ -23,6 +28,7 @@ document.querySelectorAll('.card button').forEach(button => {
         }
     })
 });
+*/
 
 //toggle theme
 themeToggle.addEventListener('click', () => {
@@ -94,21 +100,93 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const offsetTop = target.offsetTop - 80;
             window.scrollTo({
-                top: offsetTop,
+                top: target.offsetTop - 80,
                 behavior: 'smooth'
             });
         }
     });
 });
 
-
-//paralax effect hero
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero && scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+//completion checkbox
+document.querySelectorAll('.completion-checkbox').forEach(checkbox => {
+    const projectId = checkbox.dataset.project;
+    if (completedProjects.includes(projectId)) {
+        checkbox.classList.add('completed');
+        checkbox.closest('.card').classList.add('completed');
     }
+
+    checkbox.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isCompleted = checkbox.classList.toggle('completed');
+        checkbox.closest('.card').classList.toggle('completed');
+
+        if (isCompleted) {
+            if (!completedProjects.includes(projectId)) {
+                completedProjects.push(projectId);
+            }
+        } else {
+            const index = completedProjects.indexOf(projectId);
+            if (index > -1) {
+                completedProjects.splice(index, 1);
+            }
+        }
+        localStorage.setItem('completedProjects', JSON.stringify(completedProjects));
+    });
+});
+
+//collect all tags from cards
+const allTags = new Set();
+document.querySelectorAll('.card').forEach(card => {
+    const tags = card.dataset.tags.split(',');
+    tags.forEach(tag => allTags.add(tag.trim()));
+});
+
+//create filter tags
+const activeFilters = new Set();
+allTags.forEach(tag => {
+    const filterTag = document.createElement('div');
+    filterTag.className = 'filter-tag';
+    filterTag.textContent = tag;
+    filterTag.addEventListener('click', () => {
+        filterTag.classList.toggle('active');
+        if (activeFilters.has(tag)) {
+            activeFilters.delete(tag);
+        } else {
+            activeFilters.add(tag);
+        }
+        filterCards();
+    });
+    filterTagsContainer.appendChild(filterTag);
+});
+
+//clear filters
+clearFiltersBtn.addEventListener('click', () => {
+    activeFilters.clear();
+    document.querySelectorAll('.filter-tag').forEach(tag => {
+        tag.classList.remove('active');
+    });
+    filterCards();
+});
+
+//filter cards based on filters
+function filterCards() {
+    document.querySelectorAll('.card').forEach(card => {
+        if (activeFilters.size === 0) {
+            card.style.display = 'block';
+        } else {
+            const cardTags = card.dataset.tags.split(',').map(t => t.trim());
+            const hasAllTags = Array.from(activeFilters).every(filter =>
+                cardTags.includes(filter)
+            );
+            card.style.display = hasAllTags ? 'block' : 'none';
+        }
+    });
+}
+
+//button of cards
+document.querySelectorAll('.card button').forEach(button => {
+    button.addEventListener('click', () => {
+        alert('This project tutorial is coming soon! Stay tuned.');
+    });
 });

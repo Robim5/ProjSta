@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>ProjSta</title>
 </head>
 
 <body>
     <header id="header">
         <div class="nav-container">
             <div class="logo-section">
-                <img id="logoImg" src="assets/logo/logolight.png" alt="Logo" onerror="this.style.display='none'">
+                <img id="logoImg" src="assets/logo/logolight.png" alt="Logo">
+                <span>Learn Together</span>
             </div>
             <nav>
                 <ul>
@@ -23,14 +24,26 @@
                     <li><a href="#csharp">C#</a></li>
                 </ul>
             </nav>
-            <i id="themeToggle" class="ri-moon-clear-fill"></i>
+            <div class="nav-right">
+                <div class="auth-links">
+                    <a href="#" class="login">Login</a>
+                    <a href="#" class="signup">Sign Up</a>
+                </div>
+                <i id="themeToggle" class="ri-moon-clear-fill"></i>
+            </div>
         </div>
     </header>
 
+<!-- ============== HERO ====================================================== -->
     <section class="hero">
+        <div class="hero-grid"></div>
         <div class="hero-content">
-            <h1>Let's Learn Together!</h1>
-            <p>Build Amazing Projects and Master Coding Through Hands-On Experience</p>
+            <div class="hero-badge">
+                <i class="ri-sparkling-fill"></i>
+                <span>100% Free Forever</span>
+            </div>
+            <h1>Master Coding<br><span class="gradient-text">Through Practice</span></h1>
+            <p>Build real projects, track your progress, and become a confident developer with hands-on experience</p>
             <div class="hero-buttons">
                 <a href="#javascript" class="btn btn-primary">
                     Start Learning <i class="ri-arrow-right-line"></i>
@@ -42,7 +55,7 @@
         </div>
     </section>
 
-
+<!-- ============== STATS ====================================================== -->
     <div class="stats">
         <div class="stat-card fade-in">
             <div class="stat-icon"><i class="ri-code-box-line"></i></div>
@@ -66,9 +79,17 @@
         </div>
     </div>
 
+<!-- ============== FILTER ====================================================== -->
+    <div class="filter-section fade-in">
+        <div class="filter-header">
+            <h3><i class="ri-filter-3-line"></i> Filter by Tags</h3>
+            <button class="clear-filters" id="clearFilters">Clear All</button>
+        </div>
+        <div class="filter-tags" id="filterTags"></div>
+    </div>
 
-    <!-- ============== JAVASCRIPT ====================================================== -->
 
+<!-- ============== JAVASCRIPT ====================================================== -->
     <section id="javascript">
         <div class="section-header fade-in">
             <span class="section-tag">Pure JavaScript</span>
@@ -77,13 +98,16 @@
                 advanced concepts.</p>
         </div>
 
-        <h3 style="color: var(--midgreen); font-size: 28px; margin: 40px 0 20px;">Easy Projects</h3>
-
-        <div class="cards fade-in">
-            <!--=== Calculator === -->
-            <div class="card fade-in" data-link="---">
+        <!-- ============== EASY ====================================================== -->
+        <h3>Easy Projects</h3>
+        <div class="cards fade-in" data-category="easy">
+            <!-- ============== CALCULATOR ====================================================== -->
+            <div class="card" data-tags="Learn Basic,Math,Easy">
                 <div class="card-image">
-                    <img src="assets/javascript/easy/calculator.png" alt="Calculator">
+                    <div class="completion-checkbox" data-project="calculator">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://wallpapers.com/images/hd/basic-black-and-white-calculator-ap38v4tgv731d8qn.jpg" alt="Calculator">
                     <span class="card-badge">Easy</span>
                 </div>
                 <div class="card-content">
@@ -96,15 +120,16 @@
                         <span class="tag">Math</span>
                         <span class="tag">Easy</span>
                     </div>
-                    <button>
-                        How do i do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== Password Generator === -->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== PASSWORD  ====================================================== -->
+            <div class="card" data-tags="Learn Basic,Security,Easy">
                 <div class="card-image">
-                    <img src="assets/javascript/easy/password.png" alt="password">
+                    <div class="completion-checkbox" data-project="password">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=400" alt="Password">
                     <span class="card-badge">Easy</span>
                 </div>
                 <div class="card-content">
@@ -117,15 +142,16 @@
                         <span class="tag">Security</span>
                         <span class="tag">Easy</span>
                     </div>
-                    <button>
-                        How do i do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== To Do List === -->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== TO DO ====================================================== -->
+            <div class="card" data-tags="CRUD,Local Storage,Easy">
                 <div class="card-image">
-                    <img src="assets/javascript/easy/todo.png" alt="todo">
+                    <div class="completion-checkbox" data-project="todo">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400" alt="Todo">
                     <span class="card-badge">Easy</span>
                 </div>
                 <div class="card-content">
@@ -138,15 +164,16 @@
                         <span class="tag">Local Storage</span>
                         <span class="tag">Easy</span>
                     </div>
-                    <button>
-                        How do i do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== CountDown === -->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== COUNTDOWN ====================================================== -->
+            <div class="card" data-tags="Sound,Time,Easy">
                 <div class="card-image">
-                    <img src="assets/javascript/easy/countdown.png" alt="todo">
+                    <div class="completion-checkbox" data-project="countdown">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1501139083538-0139583c060f?w=400" alt="Countdown">
                     <span class="card-badge">Easy</span>
                 </div>
                 <div class="card-content">
@@ -159,20 +186,22 @@
                         <span class="tag">Time</span>
                         <span class="tag">Easy</span>
                     </div>
-                    <button>
-                        How do i do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== Rock Paper Scissor === -->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== ROCK PAPER SCISSOR ====================================================== -->
+            <div class="card" data-tags="Game,Random,Fun,Easy">
                 <div class="card-image">
-                    <img src="assets/javascript/easy/rockpaperscissor.png" alt="Rock Paper Scissor">
+                    <div class="completion-checkbox" data-project="rps">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://i.pinimg.com/736x/ac/52/1a/ac521a60157ee0b8631475994ef594b1.jpg"
+                        alt="Rock Paper Scissor">
                     <span class="card-badge">Easy</span>
                 </div>
                 <div class="card-content">
                     <h3>Rock Paper Scissor</h3>
-                    <p>Play the classic game against the computer and test your luck with random outcomes!</p>
+                    <p>Play the classic game against the computer and test your luck!</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -181,20 +210,21 @@
                         <span class="tag">Fun</span>
                         <span class="tag">Easy</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== BMI Calculator === -->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== BMI ====================================================== -->
+            <div class="card" data-tags="Math,Health,Input,Easy">
                 <div class="card-image">
-                    <img src="assets/javascript/easy/bmi.png" alt="BMI Calculator">
+                    <div class="completion-checkbox" data-project="bmi">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400" alt="BMI">
                     <span class="card-badge">Easy</span>
                 </div>
                 <div class="card-content">
                     <h3>BMI Calculator</h3>
-                    <p>Calculate your Body Mass Index (BMI) instantly and find out your health category.</p>
+                    <p>Calculate your Body Mass Index instantly and find your health category</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -203,20 +233,21 @@
                         <span class="tag">Input</span>
                         <span class="tag">Easy</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== Image Slider === -->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== IMAGE ====================================================== -->
+            <div class="card" data-tags="DOM,Animation,UI,Easy,Pretty">
                 <div class="card-image">
-                    <img src="assets/javascript/easy/slider.png" alt="Image Slider">
+                    <div class="completion-checkbox" data-project="slider">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=400" alt="Slider">
                     <span class="card-badge">Easy</span>
                 </div>
                 <div class="card-content">
                     <h3>Image Slider</h3>
-                    <p>Create a smooth automatic image carousel with manual navigation buttons.</p>
+                    <p>Create a smooth automatic image carousel with manual navigation</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -226,20 +257,21 @@
                         <span class="tag">Easy</span>
                         <span class="tag">Pretty</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== General Converter === -->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== CONVERTER ====================================================== -->
+            <div class="card" data-tags="Math,Conversion,Input,Easy">
                 <div class="card-image">
-                    <img src="assets/javascript/easy/unit.png" alt="General Converter">
+                    <div class="completion-checkbox" data-project="converter">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400" alt="Converter">
                     <span class="card-badge">Easy</span>
                 </div>
                 <div class="card-content">
                     <h3>General Converter</h3>
-                    <p>Convert units like length, weight, temperature and money with a simple dropdown-based tool.</p>
+                    <p>Convert units like length, weight, temperature and money easily</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -248,26 +280,27 @@
                         <span class="tag">Input</span>
                         <span class="tag">Easy</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-
         </div>
 
-        <h3 style="color: var(--midgreen); font-size: 28px; margin: 60px 0 20px;">Intermediate Projects</h3>
-
-        <div class="cards fade-in">
-            <!--=== Scientific Calculator ===-->
-            <div class="card fade-in" data-link="projects/SimpleJs/Calculator/Calculator.html">
+        <!-- ============== INTERMEDIATE ====================================================== -->
+        <h3>Intermediate Projects</h3>
+        <div class="cards fade-in" data-category="intermediate">
+            <!-- ============== CALCULATOR ====================================================== -->
+            <div class="card" data-tags="Math,Functions,Intermediate">
                 <div class="card-image">
-                    <img src="assets/javascript/mid/calculator.png" alt="Scientific Calculator">
+                    <div class="completion-checkbox" data-project="scientific-calc">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=400"
+                        alt="Scientific Calculator">
                     <span class="card-badge">Intermediate</span>
                 </div>
                 <div class="card-content">
                     <h3>Scientific Calculator</h3>
-                    <p>Upgrade your basic calculator with advanced functions like sin, cos, log, and more.</p>
+                    <p>Upgrade your calculator with sin, cos, log, and more functions</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -275,20 +308,21 @@
                         <span class="tag">Functions</span>
                         <span class="tag">Intermediate</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== Weather App ===-->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== WEATHER ====================================================== -->
+            <div class="card" data-tags="API,Async,Fetch,Intermediate">
                 <div class="card-image">
-                    <img src="assets/javascript/mid/weather.png" alt="Weather App">
+                    <div class="completion-checkbox" data-project="weather">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?w=400" alt="Weather">
                     <span class="card-badge">Intermediate</span>
                 </div>
                 <div class="card-content">
                     <h3>Weather App</h3>
-                    <p>Fetch real-time weather data from an API and display it with beautiful visuals.</p>
+                    <p>Fetch real-time weather data from an API with beautiful visuals</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -297,20 +331,21 @@
                         <span class="tag">Fetch</span>
                         <span class="tag">Intermediate</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== Kanban Board ===-->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== KANBAN ====================================================== -->
+            <div class="card" data-tags="Drag & Drop,Organization,Intermediate">
                 <div class="card-image">
-                    <img src="assets/javascript/mid/kanban.png" alt="Kanban Board">
+                    <div class="completion-checkbox" data-project="kanban">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400" alt="Kanban">
                     <span class="card-badge">Intermediate</span>
                 </div>
                 <div class="card-content">
                     <h3>Kanban Board</h3>
-                    <p>Create a drag-and-drop task manager with multiple columns for workflow organization.</p>
+                    <p>Create a drag-and-drop task manager for workflow organization</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -318,20 +353,21 @@
                         <span class="tag">Organization</span>
                         <span class="tag">Intermediate</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== Episode Tracker ===-->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== TRACKER ====================================================== -->
+            <div class="card" data-tags="CRUD,Local Storage,Intermediate">
                 <div class="card-image">
-                    <img src="assets/javascript/mid/episode.png" alt="Episode Tracker">
+                    <div class="completion-checkbox" data-project="episode">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://static.vecteezy.com/system/resources/previews/007/342/564/non_2x/tv-series-tracker-journal-template-interior-daily-tv-series-information-and-show-rating-tracker-interior-interior-of-a-logbook-tv-series-checker-and-episode-counter-template-vector.jpg" alt="Episode Tracker">
                     <span class="card-badge">Intermediate</span>
                 </div>
                 <div class="card-content">
                     <h3>Episode Tracker</h3>
-                    <p>Track your favorite shows and mark episodes as watched or pending.</p>
+                    <p>Track your favorite shows and mark episodes as watched</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -339,20 +375,21 @@
                         <span class="tag">Local Storage</span>
                         <span class="tag">Intermediate</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== Quiz App ===-->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== QUIZZ ====================================================== -->
+            <div class="card" data-tags="Logic,Score,Intermediate">
                 <div class="card-image">
-                    <img src="assets/javascript/mid/quizz.png" alt="Quiz App">
+                    <div class="completion-checkbox" data-project="quiz">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=400" alt="Quiz">
                     <span class="card-badge">Intermediate</span>
                 </div>
                 <div class="card-content">
                     <h3>Quiz App</h3>
-                    <p>Create a dynamic quiz with multiple questions, instant scoring, and progress tracking.</p>
+                    <p>Create a dynamic quiz with scoring and progress tracking</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -360,20 +397,21 @@
                         <span class="tag">Score</span>
                         <span class="tag">Intermediate</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== Drawing App ===-->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== DRAWING ====================================================== -->
+            <div class="card" data-tags="Canvas,Creative,Intermediate">
                 <div class="card-image">
-                    <img src="assets/javascript/mid/drawing.png" alt="Drawing App">
+                    <div class="completion-checkbox" data-project="drawing">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1561998338-13ad7883b20f?w=400" alt="Drawing">
                     <span class="card-badge">Intermediate</span>
                 </div>
                 <div class="card-content">
                     <h3>Drawing App</h3>
-                    <p>Let users draw on a canvas with adjustable colors and brush sizes.</p>
+                    <p>Let users draw on canvas with adjustable colors and brush sizes</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -381,25 +419,25 @@
                         <span class="tag">Creative</span>
                         <span class="tag">Intermediate</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
         </div>
-
-        <h3 style="color: var(--midgreen); font-size: 28px; margin: 60px 0 20px;">Games</h3>
-
-        <div class="cards fade-in">
-            <!--=== Space Invaders ===-->
-            <div class="card fade-in" data-link="projects/SimpleJs/Calculator/Calculator.html">
+        <!-- ============== GAMES ====================================================== -->
+        <h3>Games</h3>
+        <div class="cards fade-in" data-category="games">
+            <!-- ============== SPACE INVADERS ====================================================== -->
+            <div class="card" data-tags="Canvas,Shooter,Game">
                 <div class="card-image">
-                    <img src="assets/javascript/games/space.png" alt="Space Invaders">
+                    <div class="completion-checkbox" data-project="space">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=400" alt="Space Invaders">
                     <span class="card-badge">Game</span>
                 </div>
                 <div class="card-content">
                     <h3>Space Invaders</h3>
-                    <p>Shoot incoming enemies and survive as long as possible in this retro arcade classic.</p>
+                    <p>Shoot incoming enemies in this retro arcade classic</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -407,20 +445,21 @@
                         <span class="tag">Shooter</span>
                         <span class="tag">Game</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== Tic Tac Toe ===-->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== TICTACTOE ====================================================== -->
+            <div class="card" data-tags="Logic,2 Players,Game">
                 <div class="card-image">
-                    <img src="assets/javascript/games/tictactoe.png" alt="Tic Tac Toe">
+                    <div class="completion-checkbox" data-project="tictactoe">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://media.istockphoto.com/id/1292919739/vector/tic-tac-toe-school-game-colorful-seamless-pattern-for-fabric-and-print-on-the-paper.jpg?s=612x612&w=0&k=20&c=Q4gMspKHffPmhKuofb_Rb_WCD8uAgbsbXSKuWEcziM8=" alt="Tic Tac Toe">
                     <span class="card-badge">Game</span>
                 </div>
                 <div class="card-content">
                     <h3>Tic Tac Toe</h3>
-                    <p>Challenge the computer or a friend in this classic 3x3 grid logic game.</p>
+                    <p>Challenge the computer or a friend in this classic logic game</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -428,20 +467,21 @@
                         <span class="tag">2 Players</span>
                         <span class="tag">Game</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== Snake Game ===-->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== SNAKE GAME ====================================================== -->
+            <div class="card" data-tags="Canvas,Classic,Game">
                 <div class="card-image">
-                    <img src="assets/javascript/games/snake.png" alt="Snake Game">
+                    <div class="completion-checkbox" data-project="snake">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://media.istockphoto.com/id/1075478326/photo/vintage-antique-snakes-and-ladders-board-game.jpg?s=612x612&w=0&k=20&c=5Ehqo4DGY_iYyMbjlWGchHODBC-lvwRzwh7RBBsywys=" alt="Snake">
                     <span class="card-badge">Game</span>
                 </div>
                 <div class="card-content">
                     <h3>Snake Game</h3>
-                    <p>Control the snake, eat food, and avoid crashing into yourself, this is a timeless challenge!</p>
+                    <p>Control the snake, eat food, avoid crashing - a timeless challenge!</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -449,20 +489,21 @@
                         <span class="tag">Classic</span>
                         <span class="tag">Game</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== Memory Game ===-->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== MEMORY ====================================================== -->
+            <div class="card" data-tags="Logic,Match,Game">
                 <div class="card-image">
-                    <img src="assets/javascript/games/memory.png" alt="Memory Game">
+                    <div class="completion-checkbox" data-project="memory">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://c8.alamy.com/comp/2H333ED/matching-pairs-geometry-game-memory-training-circle-triangle-square-tile-on-pink-teal-yellow-white-background-eps-10-2H333ED.jpg" alt="Memory">
                     <span class="card-badge">Game</span>
                 </div>
                 <div class="card-content">
                     <h3>Memory Game</h3>
-                    <p>Flip cards to find matching pairs and test your short-term memory skills.</p>
+                    <p>Flip cards to find matching pairs and test your memory</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -470,21 +511,21 @@
                         <span class="tag">Match</span>
                         <span class="tag">Game</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== 2D Platform ===-->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== PLATFORM ====================================================== -->
+            <div class="card" data-tags="Physics,Canvas,Game">
                 <div class="card-image">
-                    <img src="assets/javascript/games/platform.png" alt="2D Platform">
+                    <div class="completion-checkbox" data-project="platform">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://static.vecteezy.com/system/resources/previews/027/175/725/non_2x/game-platform-seamless-2d-background-design-vector.jpg" alt="Platform">
                     <span class="card-badge">Game</span>
                 </div>
                 <div class="card-content">
                     <h3>2D Platform</h3>
-                    <p>Run, jump, and collect coins in your own mini platformer world built with JavaScript and Canvas.
-                    </p>
+                    <p>Run, jump, and collect coins in your own platformer world</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -492,20 +533,21 @@
                         <span class="tag">Canvas</span>
                         <span class="tag">Game</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== Ping Pong ===-->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== PING PONG ====================================================== -->
+            <div class="card" data-tags="Canvas,Physics,Game">
                 <div class="card-image">
-                    <img src="assets/javascript/games/pong.png" alt="Ping Pong">
+                    <div class="completion-checkbox" data-project="pong">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/007/935/401/small/ping-pong-sport-pattern-background-illustration-vector.jpg" alt="Pong">
                     <span class="card-badge">Game</span>
                 </div>
                 <div class="card-content">
                     <h3>Ping Pong</h3>
-                    <p>Battle against the computer in this fast-paced two-player paddle game.</p>
+                    <p>Battle against the computer in this fast-paced paddle game</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -513,20 +555,21 @@
                         <span class="tag">Physics</span>
                         <span class="tag">Game</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== Hangman ===-->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== HANGMAN ====================================================== -->
+            <div class="card" data-tags="Logic,Word,Game">
                 <div class="card-image">
-                    <img src="assets/javascript/games/hangman.png" alt="Hangman">
+                    <div class="completion-checkbox" data-project="hangman">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://t4.ftcdn.net/jpg/02/48/96/11/360_F_248961156_XeSISXFo6bcFUw830wpE2zPLxWGCl1u9.jpg" alt="Hangman">
                     <span class="card-badge">Game</span>
                 </div>
                 <div class="card-content">
                     <h3>Hangman</h3>
-                    <p>Guess the hidden word before the little stickman meets his doom!</p>
+                    <p>Guess the hidden word before the stickman meets his doom!</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -534,20 +577,21 @@
                         <span class="tag">Word</span>
                         <span class="tag">Game</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
-            <!--=== Flappy Bird ===-->
-            <div class="card fade-in" data-link="---">
+            <!-- ============== FLAPPY  ====================================================== -->
+            <div class="card" data-tags="Canvas,Physics,Game">
                 <div class="card-image">
-                    <img src="assets/javascript/games/bird.png" alt="Flappy Bird">
+                    <div class="completion-checkbox" data-project="flappy">
+                        <i class="ri-check-line"></i>
+                    </div>
+                    <img src="https://img.itch.zone/aW1hZ2UvMTEwOTk0MS82NDA5NjY4LnBuZw==/original/u1ZpVC.png" alt="Flappy Bird">
                     <span class="card-badge">Game</span>
                 </div>
                 <div class="card-content">
                     <h3>Flappy Bird</h3>
-                    <p>Fly between pipes and rack up your score in this addictive side-scrolling game.</p>
+                    <p>Fly between pipes and rack up your score in this addictive game</p>
                 </div>
                 <div class="card-footer">
                     <div class="card-tags">
@@ -555,20 +599,13 @@
                         <span class="tag">Physics</span>
                         <span class="tag">Game</span>
                     </div>
-                    <button>
-                        How do I do this? <i class="ri-arrow-right-line"></i>
-                    </button>
+                    <button>How do I do this? <i class="ri-arrow-right-line"></i></button>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-
-
-
-
+    <!-- ============== REACT ====================================================== -->
     <section id="react">
         <div class="section-header fade-in">
             <span class="section-tag">React & JavaScript</span>
@@ -582,6 +619,7 @@
         </div>
     </section>
 
+    <!-- ============== PYTHON ====================================================== -->
     <section id="python">
         <div class="section-header fade-in">
             <span class="section-tag">Python</span>
@@ -595,6 +633,7 @@
         </div>
     </section>
 
+    <!-- ============== C# ====================================================== -->
     <section id="csharp">
         <div class="section-header fade-in">
             <span class="section-tag">C Sharp</span>
