@@ -19,17 +19,6 @@ if (localStorage.getItem('theme') === 'dark') {
     }
 }
 
-/*open projects in new tab
-document.querySelectorAll('.card button').forEach(button => {
-    button.addEventListener('click', () => {
-        const link = button.getAttribute('data-link');
-        if (link) {
-            window.location.href = link;
-        }
-    })
-});
-*/
-
 //toggle theme
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-theme');
@@ -187,6 +176,13 @@ function filterCards() {
 //button of cards
 document.querySelectorAll('.card button').forEach(button => {
     button.addEventListener('click', () => {
-        alert('This project tutorial is coming soon! Stay tuned.');
+        try {
+            const card = button.closest('.card')
+            const path = card.getAttribute('data-path')
+            if (path) window.location.href = path
+        }
+        catch (error) {
+            alert('This project tutorial is coming soon! Stay tuned.');
+        }
     });
 });

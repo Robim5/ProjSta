@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background: linear-gradient(135deg, #00a896, #22a48c);
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(10px);
+}
+
+header h1 {
+  margin: -10px 0 -10px 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: black;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.display {
+  width: 95%;
+  height: 60px;
+  text-align: right;
+  font-size: 2rem;
+  padding: 10px 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #222;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.1s ease-in-out;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.button {
+  font-size: 1.4rem;
+  padding: 18px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.button:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.button.clear,
+.button.del {
+  background: #057001;
+}
+
+.button.clear:hover,
+.button.del:hover {
+  background: rgb(5, 148, 31);
+}
+
+.button.result {
+  background: #023124;
+  color: white;
+}
+
+.button.result:hover {
+  background: #058961;
+  color: black;
+}
+
+.button.op {
+  background: #10cd29;
+}
+
+.button.op:hover {
+  background: #055a238f;
+}
+
+.button.zero {
+  grid-column: span 2;
+}
+
+
+

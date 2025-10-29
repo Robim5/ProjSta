@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+        <header>
+            <h1>Basic Calculator</h1>
+            <p class="subtitle">Add | Subtract | Multiply | Divide</p>
+        </header>
+
+        <section class="calculator">
+            <input type="text" id="display" class="display" placeholder="0" readonly />
+
+            <div class="buttons">
+                <!-- Row 1 -->
+                <button class="button clear" onclick="ClearDisplay()">C</button>
+                <button class="button del" onclick="DeleteLast()">DEL</button>
+                <button class="button op" onclick="TranformPerc()">%</button>
+                <button class="button op" onclick="AppendOp('/')">÷</button>
+
+                <!-- Row 2 -->
+                <button class="button number" onclick="AppendNum('7')">7</button>
+                <button class="button number" onclick="AppendNum('8')">8</button>
+                <button class="button number" onclick="AppendNum('9')">9</button>
+                <button class="button op" onclick="AppendOp('*')">×</button>
+
+                <!-- Row 3 -->
+                <button class="button number" onclick="AppendNum('4')">4</button>
+                <button class="button number" onclick="AppendNum('5')">5</button>
+                <button class="button number" onclick="AppendNum('6')">6</button>
+                <button class="button op" onclick="AppendOp('-')">−</button>
+
+                <!-- Row 4 -->
+                <button class="button number" onclick="AppendNum('1')">1</button>
+                <button class="button number" onclick="AppendNum('2')">2</button>
+                <button class="button number" onclick="AppendNum('3')">3</button>
+                <button class="button op" onclick="AppendOp('+')">+</button>
+
+                <!-- Row 5 -->
+                <button class="button zero" onclick="AppendNum('0')">0</button>
+                <button class="button number" onclick="AppendNum('.')">.</button>
+                <button class="button result" onclick="Calculate()">=</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
