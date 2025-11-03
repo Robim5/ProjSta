@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+        <h1>Password Generator</h1>
+
+        <input type="text" id="display" class="display" placeholder="Password Will Appear Here..." readonly>
+
+        <div class="filters">
+            <!--Lenght of password-->
+            <div class="setting">
+                <label for="lengthRange">Length: <span id="lengthValue">10</span></label>
+                <input type="range" id="lengthRange" min="8" max="20" value="10">
+            </div>
+
+            <!--checkbox toggle switch -->
+            <div class="setting">
+                <label for="uppercase">Include Uppercase</label>
+                <label class="switch">
+                    <input type="checkbox" id="uppercase" aria-label="Include uppercase letters">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting">
+                <span>Include Lowercase</span>
+                <label class="switch">
+                    <input type="checkbox" id="lowercase" aria-label="Include lowercase letters">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting">
+                <span>Include Numbers</span>
+                <label class="switch">
+                    <input type="checkbox" id="numbers" aria-label="Include numbers">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting">
+                <span>Include Symbols</span>
+                <label class="switch">
+                    <input type="checkbox" id="symbols" aria-label="Include numbers">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="generate">Generate</button>
+            <button id="copy" title="Copy"><i class="ri-file-copy-2-line"></i></button>
+            <button id="clear" title="Clear"><i class="ri-eraser-line"></i></button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
